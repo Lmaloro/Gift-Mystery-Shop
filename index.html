@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Mystery Shop</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: linear-gradient(120deg, #ffcc00, #ff6699); }
+        .container { padding: 20px; }
+        .category { display: inline-block; margin: 10px; padding: 15px; background: #f4f4f4; cursor: pointer; border-radius: 10px; transition: 0.3s; }
+        .category:hover { background: #ffcc00; }
+        .btn { background: #28a745; color: white; padding: 10px 20px; border: none; cursor: pointer; margin-top: 20px; border-radius: 5px; }
+        .btn:hover { background: #218838; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gift Mystery Shop</h1>
+    </header>
+    <div class="container">
+        <h2>Select the Occasion</h2>
+        <div class="category" onclick="selectCategory('Birthday')">🎂 Birthday</div>
+        <div class="category" onclick="selectCategory('Wedding')">💍 Wedding</div>
+        <div class="category" onclick="selectCategory('Kids')">🧸 Kids</div>
+        <div class="category" onclick="selectCategory('Other')">🎁 Other</div>
+
+        <form id="giftForm">
+            <div class="preferences">
+                <h3>Any Preferences?</h3>
+                <input type="text" id="preferences" name="preferences" placeholder="E.g., Favorite color, hobbies"><br>
+                <input type="email" id="email" name="email" placeholder="Your Email for Order Confirmation" required><br>
+                <button type="submit" class="btn">Submit Order</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('giftForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.replace('order-summary.html');
+        });
+    </script>
+</body>
+</html>
